@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
-import { useData } from "@/state/DataContext";
-import { fmtEUR, fmtDate } from "@/lib/format";
-import { Input } from "@/components/ui/input";
+import { useData } from "./state/DataContext";
+import { fmtEUR, fmtDate } from "./lib/format";
+import { Input } from "./components/ui/input";
 import { Search, ChevronDown, ChevronRight, Receipt as ReceiptIcon, Tag } from "lucide-react";
 
 export default function Receipts() {
@@ -54,14 +54,14 @@ export default function Receipts() {
                 <div>
                     <h1 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-stone-900">Receipts</h1>
                     <p className="text-sm text-stone-500 mt-1">
-                        {grouped.length} receipts · grouped by AfschriftID · Datum · Keten
+                        {grouped.length} receipts Â· grouped by AfschriftID Â· Datum Â· Keten
                     </p>
                 </div>
                 <div className="relative w-full sm:w-72">
                     <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-stone-400" />
                     <Input
                         data-testid="receipts-search"
-                        placeholder="Search receipt, store, product…"
+                        placeholder="Search receipt, store, productâ€¦"
                         value={q}
                         onChange={(e) => setQ(e.target.value)}
                         className="pl-8 bg-white"
@@ -89,10 +89,10 @@ export default function Receipts() {
                                 <div className="flex-1 min-w-0 grid grid-cols-2 sm:grid-cols-4 gap-2 items-center">
                                     <div>
                                         <div className="text-xs font-mono uppercase tracking-widest text-stone-500">
-                                            {g.keten || "—"}
+                                            {g.keten || "â€”"}
                                         </div>
                                         <div className="text-sm text-stone-800 truncate">
-                                            {g.adres || "—"}
+                                            {g.adres || "â€”"}
                                         </div>
                                     </div>
                                     <div>
@@ -132,15 +132,15 @@ export default function Receipts() {
                                             {g.rows.map((r) => (
                                                 <tr key={r.id} className="border-t border-stone-100">
                                                     <td className="px-4 py-2">
-                                                        <div className="text-stone-900 font-medium">{r.Product || "—"}</div>
+                                                        <div className="text-stone-900 font-medium">{r.Product || "â€”"}</div>
                                                         {r.Omschrijving && <div className="text-xs text-stone-500">{r.Omschrijving}</div>}
                                                     </td>
-                                                    <td className="px-4 py-2 text-stone-700 text-xs">{r.Merk || "—"}</td>
-                                                    <td className="px-4 py-2 text-stone-700 text-xs">{r.Soort || "—"}</td>
+                                                    <td className="px-4 py-2 text-stone-700 text-xs">{r.Merk || "â€”"}</td>
+                                                    <td className="px-4 py-2 text-stone-700 text-xs">{r.Soort || "â€”"}</td>
                                                     <td className="px-4 py-2 text-right font-mono">{fmtEUR(r.Prijs)}</td>
                                                     <td className="px-4 py-2 text-right font-mono">{r["#"] || 1}</td>
                                                     <td className={`px-4 py-2 text-right font-mono ${Number(r.Voordeel || 0) > 0 ? "text-emerald-700 font-semibold" : "text-stone-400"}`}>
-                                                        {Number(r.Voordeel || 0) > 0 ? fmtEUR(r.Voordeel) : "—"}
+                                                        {Number(r.Voordeel || 0) > 0 ? fmtEUR(r.Voordeel) : "â€”"}
                                                     </td>
                                                     <td className="px-4 py-2 text-right font-mono font-semibold text-stone-900">{fmtEUR(r["Totaal+"] || r.Totaal)}</td>
                                                 </tr>
