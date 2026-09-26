@@ -12,10 +12,10 @@ import {
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "@/components/ui/select";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+} from "./components/ui/select";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./components/ui/sheet";
 import { Search, SlidersHorizontal, Download, X, ArrowUpDown, Tag } from "lucide-react";
-import { toCSV } from "@/lib/parse";
+import { toCSV } from "./lib/parse";
 import { toast } from "sonner";
 
 const ALL = "__all__";
