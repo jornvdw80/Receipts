@@ -1,8 +1,8 @@
 import React, { useMemo } from "react";
-import { useData } from "@/state/DataContext";
-import StatCard from "@/components/StatCard";
-import Dropzone from "@/components/Dropzone";
-import { fmtEUR, fmtNum, monthLabel } from "@/lib/format";
+import { useData } from "./state/DataContext";
+import StatCard from "./components/StatCard";
+import Dropzone from "./components/Dropzone";
+import { fmtEUR, fmtNum, monthLabel } from "./lib/format";
 import {
     Receipt as ReceiptIcon,
     Wallet,
@@ -66,7 +66,7 @@ export default function Dashboard() {
     const byKeten = useMemo(() => {
         const map = new Map();
         for (const r of items) {
-            const k = r.Keten || "—";
+            const k = r.Keten || "â€”";
             map.set(k, (map.get(k) || 0) + Number(r["Totaal+"] || r.Totaal || 0));
         }
         return Array.from(map.entries())
@@ -90,9 +90,9 @@ export default function Dashboard() {
     const topProducts = useMemo(() => {
         const map = new Map();
         for (const r of items) {
-            const key = (r.Product || "—").toLowerCase();
+            const key = (r.Product || "â€”").toLowerCase();
             const cur = map.get(key) || {
-                product: r.Product || "—",
+                product: r.Product || "â€”",
                 spend: 0,
                 count: 0,
             };
@@ -111,7 +111,7 @@ export default function Dashboard() {
                 <div className="text-center mb-8">
                     <div className="inline-flex items-center gap-1.5 rounded-full border border-stoneBorder bg-paperCard px-3 py-1 text-[11px] font-mono uppercase tracking-widest text-stone-500 mb-4">
                         <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                        local · client-side · zero backend
+                        local Â· client-side Â· zero backend
                     </div>
                     <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-stone-900">
                         Your kassabonnen, but{" "}
@@ -119,7 +119,7 @@ export default function Dashboard() {
                     </h1>
                     <p className="mt-3 text-stone-600 max-w-2xl mx-auto">
                         Drop your Colruyt / Albert Heijn / Jumbo export. See what you spent,
-                        where, on what — and every euro you saved. Your data never leaves
+                        where, on what â€” and every euro you saved. Your data never leaves
                         this browser.
                     </p>
                 </div>
@@ -286,7 +286,7 @@ export default function Dashboard() {
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <span className="text-xs text-stone-500 font-mono">
-                                        ×{fmtNum(p.count)}
+                                        Ã—{fmtNum(p.count)}
                                     </span>
                                     <span className="font-mono font-semibold text-stone-900">
                                         {fmtEUR(p.spend)}
