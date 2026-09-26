@@ -1,13 +1,13 @@
-import "@/App.css";
+import "./App.css";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
-import Header from "@/components/Header";
-import Dashboard from "@/pages/Dashboard";
-import Receipts from "@/pages/Receipts";
-import Products from "@/pages/Products";
-import Savings from "@/pages/Savings";
-import DataControls from "@/pages/DataControls";
-import { DataProvider, useData } from "@/state/DataContext";
+import Header from "./components/Header";
+import Dashboard from "./pages/Dashboard";
+import Receipts from "./pages/Receipts";
+import Products from "./pages/Products";
+import Savings from "./pages/Savings";
+import DataControls from "./pages/DataControls";
+import { DataProvider, useData } from "./state/DataContext";
 
 function Shell() {
     const { bump } = useData();
@@ -25,7 +25,7 @@ function Shell() {
             </main>
             <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
                 <p className="text-xs text-stone-500 font-mono">
-                    kassabon · client-side · your data never leaves this browser
+                    kassabon Â· client-side Â· your data never leaves this browser
                 </p>
             </footer>
             <Toaster
