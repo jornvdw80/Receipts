@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
-import { useData } from "./state/DataContext";
-import { fmtEUR, fmtPct, monthLabel, fmtDate } from "./lib/format";
-import StatCard from "./components/StatCard";
+import { useData } from "../state/DataContext";
+import { fmtEUR, fmtPct, monthLabel, fmtDate } from "../lib/format";
+import StatCard from "../components/StatCard";
 import { PiggyBank, Tag, TrendingUp, Trophy } from "lucide-react";
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, Cell } from "recharts";
 
