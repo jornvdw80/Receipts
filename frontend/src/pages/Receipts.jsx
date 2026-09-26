@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
-import { useData } from "./state/DataContext";
-import { fmtEUR, fmtDate } from "./lib/format";
-import { Input } from "./components/ui/input";
+import { useData } from "../state/DataContext";
+import { fmtEUR, fmtDate } from "../lib/format";
+import { Input } from "../components/ui/input";
 import { Search, ChevronDown, ChevronRight, Receipt as ReceiptIcon, Tag } from "lucide-react";
 
 export default function Receipts() {
