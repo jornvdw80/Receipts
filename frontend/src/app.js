@@ -1,4 +1,4 @@
-import "./App.css";
+import "./app.css";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
 import Header from "./components/Header";
