@@ -1,21 +1,21 @@
 import React, { useMemo, useState } from "react";
-import { useData } from "./state/DataContext";
-import { fmtEUR, fmtDate } from "./lib/format";
-import { Input } from "./components/ui/input";
-import { Button } from "./components/ui/button";
-import { Badge } from "./components/ui/badge";
-import { Switch } from "./components/ui/switch";
-import { Label } from "./components/ui/label";
+import { useData } from "../state/DataContext";
+import { fmtEUR, fmtDate } from "../lib/format";
+import { Input } from "../components/ui/input";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Switch } from "../components/ui/switch";
+import { Label } from "../components/ui/label";
 import {
     Select,
     SelectContent,
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "./components/ui/select";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./components/ui/sheet";
+} from "../components/ui/select";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "../components/ui/sheet";
 import { Search, SlidersHorizontal, Download, X, ArrowUpDown, Tag } from "lucide-react";
-import { toCSV } from "./lib/parse";
+import { toCSV } from "../lib/parse";
 import { toast } from "sonner";
 
 const ALL = "__all__";
