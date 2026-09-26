@@ -11,7 +11,9 @@
     "sonner": "^1.4.3",
     "lucide-react": "^0.344.0",
     "recharts": "^2.12.2",
-    "prop-types": "^15.8.1"
+    "prop-types": "^15.8.1",
+    "dexie": "^4.0.1",
+    "dexie-react-hooks": "^1.1.7"
   },
   "scripts": {
     "start": "react-scripts start",
