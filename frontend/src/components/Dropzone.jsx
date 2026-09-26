@@ -1,10 +1,10 @@
 import React, { useCallback, useRef, useState } from "react";
 import { UploadCloud, FileUp, Sparkles } from "lucide-react";
-import { Button } from "./components/ui/button";
+import { Button } from "../components/ui/button";
 import { toast } from "sonner";
-import { parseFile } from "./lib/parse";
-import { bulkUpsertItems } from "./db";
-import { generateSampleData } from "./lib/sampleData";
+import { parseFile } from "../lib/parse";
+import { bulkUpsertItems } from "../db";
+import { generateSampleData } from "../lib/sampleData";
 
 export default function Dropzone({ onImported, compact = false }) {
     const inputRef = useRef(null);
