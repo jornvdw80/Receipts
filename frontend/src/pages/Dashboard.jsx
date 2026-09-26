@@ -1,8 +1,8 @@
 import React, { useMemo } from "react";
-import { useData } from "./state/DataContext";
-import StatCard from "./components/StatCard";
-import Dropzone from "./components/Dropzone";
-import { fmtEUR, fmtNum, monthLabel } from "./lib/format";
+import { useData } from "../state/DataContext";
+import StatCard from "../components/StatCard";
+import Dropzone from "../components/Dropzone";
+import { fmtEUR, fmtNum, monthLabel } from "../lib/format";
 import {
     Receipt as ReceiptIcon,
     Wallet,
