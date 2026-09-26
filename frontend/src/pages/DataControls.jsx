@@ -11,7 +11,7 @@ import {
     AlertDialogHeader,
     AlertDialogTitle,
     AlertDialogTrigger,
-} from "./components/ui/alert-dialog";
+} from "../components/ui/alert-dialog";
 import { Download, Upload, RotateCcw, FileUp, Sparkles, ShieldCheck, HardDrive } from "lucide-react";
 import { db, bulkUpsertItems, clearAll } from "../db";
 import { toCSV } from "../lib/parse";
