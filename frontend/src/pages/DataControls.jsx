@@ -13,9 +13,9 @@ import {
     AlertDialogTrigger,
 } from "./components/ui/alert-dialog";
 import { Download, Upload, RotateCcw, FileUp, Sparkles, ShieldCheck, HardDrive } from "lucide-react";
-import { db, bulkUpsertItems, clearAll } from "./db";
-import { toCSV } from "./lib/parse";
-import { generateSampleData } from "./lib/sampleData";
+import { db, bulkUpsertItems, clearAll } from "../db";
+import { toCSV } from "../lib/parse";
+import { generateSampleData } from "../lib/sampleData";
 import { toast } from "sonner";
 
 function saveBlob(blob, filename) {
