@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
-import { useData } from "@/state/DataContext";
-import { fmtEUR, fmtPct, monthLabel, fmtDate } from "@/lib/format";
-import StatCard from "@/components/StatCard";
+import { useData } from "./state/DataContext";
+import { fmtEUR, fmtPct, monthLabel, fmtDate } from "./lib/format";
+import StatCard from "./components/StatCard";
 import { PiggyBank, Tag, TrendingUp, Trophy } from "lucide-react";
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, Cell } from "recharts";
 
@@ -31,7 +31,7 @@ export default function Savings() {
     const byKeten = useMemo(() => {
         const map = new Map();
         for (const r of items) {
-            const k = r.Keten || "—";
+            const k = r.Keten || "â€”";
             const cur = map.get(k) || { keten: k, saved: 0, spend: 0 };
             cur.saved += Number(r.Voordeel || 0);
             cur.spend += Number(r.Totaal || 0);
@@ -113,7 +113,7 @@ export default function Savings() {
                                     <th className="py-2 pr-2">Product</th>
                                     <th className="py-2 pr-2 text-right">Prijs</th>
                                     <th className="py-2 pr-2 text-right">Korting %</th>
-                                    <th className="py-2 pr-2 text-right">Voordeel €</th>
+                                    <th className="py-2 pr-2 text-right">Voordeel â‚¬</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -121,7 +121,7 @@ export default function Savings() {
                                     <tr key={r.id} className="border-b border-stone-100 last:border-0">
                                         <td className="py-2 pr-2 font-mono text-stone-400 text-xs">{String(i + 1).padStart(2, "0")}</td>
                                         <td className="py-2 pr-2 font-mono text-xs text-stone-600 whitespace-nowrap">{fmtDate(r.DatumISO)}</td>
-                                        <td className="py-2 pr-2 text-stone-700 text-xs">{r.Keten || "—"}</td>
+                                        <td className="py-2 pr-2 text-stone-700 text-xs">{r.Keten || "â€”"}</td>
                                         <td className="py-2 pr-2">
                                             <div className="text-stone-900 font-medium">{r.Product}</div>
                                             {r.Omschrijving && <div className="text-xs text-stone-500">{r.Omschrijving}</div>}
