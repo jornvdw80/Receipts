@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import { useData } from "@/state/DataContext";
-import { Button } from "@/components/ui/button";
+import { useData } from "./state/DataContext";
+import { Button } from "./components/ui/button";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -127,7 +127,7 @@ export default function DataControls() {
             <div className="rounded-xl border border-stoneBorder bg-paperCard shadow-sm divide-y divide-stone-100">
                 <Row
                     title="Export backup (JSON)"
-                    desc="Full dump of every row. Keep it safe — this is your only recovery path if you clear the browser."
+                    desc="Full dump of every row. Keep it safe â€” this is your only recovery path if you clear the browser."
                     action={
                         <Button data-testid="export-json-button" onClick={exportJSON} disabled={!items.length} className="bg-stone-900 hover:bg-stone-800 text-white rounded-lg gap-2">
                             <Download className="h-4 w-4" /> Download JSON
@@ -157,7 +157,7 @@ export default function DataControls() {
                 />
                 <Row
                     title="Load demo data"
-                    desc="Add 40 realistic Belgian/Dutch supermarket receipts across 6 months — great for testing."
+                    desc="Add 40 realistic Belgian/Dutch supermarket receipts across 6 months â€” great for testing."
                     action={
                         <Button data-testid="load-demo-button" onClick={loadDemo} disabled={busy} variant="outline" className="border-stoneBorder rounded-lg gap-2">
                             <Sparkles className="h-4 w-4 text-emerald-600" /> Load demo
@@ -178,7 +178,7 @@ export default function DataControls() {
                                 <AlertDialogHeader>
                                     <AlertDialogTitle>Wipe local data?</AlertDialogTitle>
                                     <AlertDialogDescription>
-                                        This will delete all {items.length.toLocaleString("nl-NL")} line items in this browser. Make sure you exported a backup first — there is no cloud copy.
+                                        This will delete all {items.length.toLocaleString("nl-NL")} line items in this browser. Make sure you exported a backup first â€” there is no cloud copy.
                                     </AlertDialogDescription>
                                 </AlertDialogHeader>
                                 <AlertDialogFooter>
