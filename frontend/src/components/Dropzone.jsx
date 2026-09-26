@@ -1,10 +1,10 @@
 import React, { useCallback, useRef, useState } from "react";
 import { UploadCloud, FileUp, Sparkles } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "./components/ui/button";
 import { toast } from "sonner";
-import { parseFile } from "@/lib/parse";
-import { bulkUpsertItems } from "@/db";
-import { generateSampleData } from "@/lib/sampleData";
+import { parseFile } from "./lib/parse";
+import { bulkUpsertItems } from "./db";
+import { generateSampleData } from "./lib/sampleData";
 
 export default function Dropzone({ onImported, compact = false }) {
     const inputRef = useRef(null);
@@ -74,7 +74,7 @@ export default function Dropzone({ onImported, compact = false }) {
                     disabled={busy}
                     className="bg-emerald-600 hover:bg-emerald-700 text-white gap-2 rounded-lg"
                 >
-                    <FileUp className="h-4 w-4" /> {busy ? "Importing…" : "Import file"}
+                    <FileUp className="h-4 w-4" /> {busy ? "Importingâ€¦" : "Import file"}
                 </Button>
                 <Button
                     data-testid="header-demo-button"
@@ -121,7 +121,7 @@ export default function Dropzone({ onImported, compact = false }) {
             </h3>
             <p className="mt-2 text-sm sm:text-base text-stone-600 max-w-lg mx-auto">
                 Semicolon-separated CSV, Dutch column headers, EU number formats
-                (<span className="font-mono">1.234,56 €</span>) — all handled automatically. Nothing is uploaded; your data stays in this browser.
+                (<span className="font-mono">1.234,56 â‚¬</span>) â€” all handled automatically. Nothing is uploaded; your data stays in this browser.
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
                 <Button
@@ -133,7 +133,7 @@ export default function Dropzone({ onImported, compact = false }) {
                         inputRef.current?.click();
                     }}
                 >
-                    <FileUp className="h-4 w-4" /> {busy ? "Importing…" : "Browse file"}
+                    <FileUp className="h-4 w-4" /> {busy ? "Importingâ€¦" : "Browse file"}
                 </Button>
                 <Button
                     data-testid="dropzone-demo-button"
@@ -150,8 +150,8 @@ export default function Dropzone({ onImported, compact = false }) {
                 </Button>
             </div>
             <p className="mt-4 text-xs font-mono text-stone-500">
-                AfschriftID · ArtikelID · Datum · Product · Merk · Keten · Soort ·
-                Korting · Voordeel · Totaal · WAAR/ONWAAR
+                AfschriftID Â· ArtikelID Â· Datum Â· Product Â· Merk Â· Keten Â· Soort Â·
+                Korting Â· Voordeel Â· Totaal Â· WAAR/ONWAAR
             </p>
         </div>
     );
