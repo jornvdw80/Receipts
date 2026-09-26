@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
-import { db } from "@/db";
+import { db } from "./db";
 
 const DataContext = createContext(null);
 
