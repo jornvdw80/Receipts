@@ -28,12 +28,14 @@ export const Sheet = ({ children }) => {
         return () => { document.body.style.overflow = ''; };
     }, [open]);
 
+    // Door direct <SheetContext value={...}> te gebruiken los je de JSX-fout op
     return (
-        <SheetContext.Provider value={{ open, setOpen }}>
+        <SheetContext value={{ open, setOpen }}>
             {children}
-        </SelectContext.Provider>
+        </SheetContext>
     );
 };
+
 
 export const SheetTrigger = ({ children, asChild }) => {
     const { setOpen } = useContext(SheetContext);
