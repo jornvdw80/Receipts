@@ -10,17 +10,15 @@ export const AlertDialogTrigger = ({ children }) => <div>{children}</div>;
 //    </div>
 //);
 export const AlertDialogContent = ({ children }) => (
-    <>
-        {/* De daadwerkelijke donkere overlay die de achtergrond bedekt */}
-        <div className="fixed inset-0 z-50 bg-stone-900/60 backdrop-blur-sm transition-opacity" />
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+        {/* LAAG 1: De donkere overlay die ALLES op de achtergrond blokkeert en verduistert */}
+        <div className="fixed inset-0 bg-stone-900/60 backdrop-blur-sm transition-opacity" />
 
-        {/* De container die de modal netjes in het midden positioneert */}
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            <div className="w-full max-w-md p-6 overflow-hidden text-left align-middle transition-all transform bg-white border border-stoneBorder shadow-xl rounded-2xl relative z-10">
-                {children}
-            </div>
+        {/* LAAG 2: De daadwerkelijke witte popup-box die daarbovenop zweeft */}
+        <div className="w-full max-w-md p-6 overflow-hidden text-left align-middle transition-all transform bg-white border border-stoneBorder shadow-xl rounded-2xl relative z-[101]">
+            {children}
         </div>
-    </>
+    </div>
 );
 export const AlertDialogHeader = ({ children }) => <div className="mb-4">{children}</div>;
 export const AlertDialogTitle = ({ children }) => <h3 className="text-lg font-medium leading-6 text-gray-900">{children}</h3>;
