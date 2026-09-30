@@ -42,19 +42,21 @@ export const AlertDialogHeader = ({ children }) => <div className="mb-4">{childr
 export const AlertDialogTitle = ({ children }) => <h3 className="text-lg font-medium leading-6 text-gray-900">{children}</h3>;
 export const AlertDialogDescription = ({ children }) => <p className="text-sm text-gray-500 mt-2">{children}</p>;
 export const AlertDialogFooter = ({ children }) => <div className="flex justify-end space-x-2 mt-4">{children}</div>;
-export const AlertDialogAction = ({ children, onClick, ...props }) => (
-  <button 
-    onClick={(e) => {
-      onClick?.(e);
-      const context = useContext(AlertDialogContext);
-      context?.setOpen(false);
-    }} 
-    className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700"
-    {...props}
-  >
-    {children}
-  </button>
-);
+export const AlertDialogAction = ({ children, onClick, ...props }) => {
+  const context = useContext(AlertDialogContext);
+  return (
+    <button 
+      onClick={(e) => {
+        onClick?.(e);
+        context?.setOpen(false);
+      }} 
+      className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700"
+      {...props}
+    >
+      {children}
+    </button>
+  );
+};
 export const AlertDialogCancel = ({ children, onClick, ...props }) => {
   const context = useContext(AlertDialogContext);
   return (
